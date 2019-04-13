@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Jannik Buschke",
+  "classifications": ["AspNetCore", "React"],
+  "groupIdentity": "JannikB",
+  "identity": "JannikB.AspCra",
+  "name": "A plain template for AspNetCore (webapi) and React (Create-React-App)",
+  "shortName": "asp-cra",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "sourceName": "TemplateName",
+  "preferNameDirectory": false
+}
