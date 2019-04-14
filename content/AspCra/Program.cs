@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 
-namespace TemplateName
+namespace AspCra
 {
     public class Program
     {

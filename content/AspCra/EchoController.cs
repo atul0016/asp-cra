@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace TemplateName
+namespace AspCra
 {
     [Route("api/[controller]")]
     [ApiController]
