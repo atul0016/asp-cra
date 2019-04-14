@@ -14,14 +14,17 @@ dotnet new --install Jbuschke.AspCra::*
 
 ```
 dotnet new asp-cra --name MyApp
-cd MyApp
-dotnet run
+cd MyApp/webapp
+npm install
+npm start
 ```
 
 in a second terminal:
 
 ```
-cd MyApp/webapp
-npm install
-npm start
+cd MyApp
+dotnet run
+
 ```
+
+Then open http://localhost:4000.
