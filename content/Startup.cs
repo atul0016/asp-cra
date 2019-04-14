@@ -12,7 +12,7 @@ namespace TemplateName
     {
         public IConfiguration Configuration { get; }
 
-        public Startup(IHostingEnvironment env, IConfiguration configuration)
+        public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
@@ -20,15 +20,12 @@ namespace TemplateName
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc()
-                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             services.AddSpaStaticFiles(options => options.RootPath = "webapp");
         }
 
-        public void Configure(
-            IApplicationBuilder app,
-            IHostingEnvironment env
-        )
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -36,7 +33,7 @@ namespace TemplateName
             }
             else
             {
-                app.UseExceptionHandler("/Error");
+                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
 
@@ -64,6 +61,5 @@ namespace TemplateName
                 }
             });
         }
-
     }
 }
