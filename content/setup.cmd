@@ -1,0 +1,1 @@
+echo running setup cmd > setup.txt
