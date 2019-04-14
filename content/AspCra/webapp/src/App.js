@@ -6,9 +6,15 @@ import "./App.css";
 function App() {
   const [data, setData] = React.useState("loading");
   React.useEffect(() => {
-    fetch("/api/hello-world")
-      .then(v => v.text())
-      .then(text => setData(text));
+    if (window.location.port !== "4000") {
+      setData(
+        "Pls close this window and open http://localhost:4000 (after running 'dotnet run')"
+      );
+    } else {
+      fetch("/api/hello-world")
+        .then(v => v.text())
+        .then(text => setData(text));
+    }
   }, []);
   return (
     <div className="App">
