@@ -24,7 +24,6 @@ in a second terminal:
 ```
 cd MyApp
 dotnet run
-
 ```
 
 Then open http://localhost:4000.
