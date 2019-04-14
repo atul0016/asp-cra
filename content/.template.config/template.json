@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Jannik Buschke",
+  "classifications": ["AspNetCore", "React"],
+  "groupIdentity": "JBuschke",
+  "identity": "JBuschke.AspCra",
+  "name": "ASP.NET Core with React (CRA)",
+  "shortName": "asp-cra",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "sourceName": "AspCra",
+  "preferNameDirectory": false
+}
