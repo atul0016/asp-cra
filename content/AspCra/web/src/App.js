@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import logo from "./react-logo.svg";
 import netCoreLogo from "./asp-net-core-logo.png";
 import "./App.css";
@@ -6,14 +6,14 @@ import "./App.css";
 function App() {
   const [data, setData] = React.useState("loading");
   React.useEffect(() => {
-    if (window.location.port !== "4000") {
+    if (window.location.port !== "4000" && window.location.port !== "5000") {
       setData(
         "Pls close this window and open http://localhost:4000 (after running 'dotnet run')"
       );
     } else {
       fetch("/api/hello-world")
         .then(v => v.text())
-        .then(text => setData(text));
+        .then(text => setData("server response: " + text));
     }
   }, []);
   return (

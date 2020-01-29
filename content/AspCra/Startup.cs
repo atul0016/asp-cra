@@ -19,10 +19,10 @@ namespace AspCra
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc()
-                .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddControllersWithViews();
 
-            services.AddSpaStaticFiles(options => options.RootPath = "webapp");
+            // In production, the React files will be served from this directory
+            services.AddSpaStaticFiles(options => options.RootPath = "web/build");
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -38,8 +38,16 @@ namespace AspCra
             }
 
             app.UseHttpsRedirection();
+            app.UseStaticFiles();
+            app.UseSpaStaticFiles();
+            app.UseRouting();
 
-            app.UseMvc();
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller}/{action=Index}/{id?}");
+            });
 
             app.Map("/api/hello-world", builder =>
             {
@@ -52,7 +60,7 @@ namespace AspCra
 
             app.UseSpa(spa =>
             {
-                spa.Options.SourcePath = "webapp";
+                spa.Options.SourcePath = "web";
 
                 if (env.IsDevelopment())
                 {
